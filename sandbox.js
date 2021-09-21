@@ -18,7 +18,7 @@ todoInput.onkeyup = () => {
     }
 }
 
-const addTodo = () => { // create a function to perform a task by adding value or item in html
+const addTodo = (todo) => { // create a function to perform a task by adding value or item in html
 
     const div = document.createElement('div'); // create div element in html
     div.classList.add('todo-item'); // add class name in div named "todo-item"
@@ -30,7 +30,9 @@ const addTodo = () => { // create a function to perform a task by adding value o
     
     const span = document.createElement('span'); // create span element in html
     span.classList.add('input-item'); // set the id of span by Date.now(), Date.now() is a method that returns the number of second from the date
-    span.textContent = todoInput.value; // getting the value of todoInput using textContent and add in html
+    span.textContent = todo; // getting the value of todoInput using textContent and add in html
+
+
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete-button');
@@ -46,5 +48,7 @@ const addTodo = () => { // create a function to perform a task by adding value o
     deleteButton.addEventListener('click', () => {
         container.removeChild(div);
     });
+
+    pendingNumber.innerHTML = container.childElementCount;
 
 }
