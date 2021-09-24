@@ -49,7 +49,7 @@
     border-radius: 10px;
 }
 
-button.button-add:hover, button.button-add.active{
+button.button-add.active{
     margin-top: 10px;
     padding: 2px;
     opacity: 1;
